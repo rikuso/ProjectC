@@ -11,7 +11,7 @@ export class Ability extends Entity {
 
   @property({
     type: 'string',
-    default: img,
+    default: '',
   })
   img?: string;
 
@@ -31,7 +31,6 @@ export class Ability extends Entity {
     required: true,
   })
   ability: string;
-
 
   constructor(data?: Partial<Ability>) {
     super(data);

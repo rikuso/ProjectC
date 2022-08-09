@@ -21,6 +21,10 @@ export class Powers extends Entity {
   })
   powers: number;
 
+  @property({
+    type: 'string',
+  })
+  cardIdHasMany?: string;
 
   constructor(data?: Partial<Powers>) {
     super(data);

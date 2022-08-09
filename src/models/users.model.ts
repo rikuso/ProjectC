@@ -1,4 +1,5 @@
-import {Entity, model, property} from '@loopback/repository';
+import {Entity, model, property, belongsTo} from '@loopback/repository';
+import {Mazo} from './mazo.model';
 
 @model()
 export class Users extends Entity {
@@ -38,6 +39,8 @@ export class Users extends Entity {
   })
   password: string;
 
+  @belongsTo(() => Mazo)
+  mazoId: string;
 
   constructor(data?: Partial<Users>) {
     super(data);

@@ -1,4 +1,8 @@
-import {Entity, model, property} from '@loopback/repository';
+import {Entity, model, property, belongsTo} from '@loopback/repository';
+import {CardWeapon} from './card-weapon.model';
+import {CardArmon} from './card-armon.model';
+import {Card} from './card.model';
+import {Class} from './class.model';
 
 @model()
 export class Mazo extends Entity {
@@ -21,6 +25,17 @@ export class Mazo extends Entity {
   })
   active?: boolean;
 
+  @belongsTo(() => CardWeapon)
+  cardWeaponId: string;
+
+  @belongsTo(() => CardArmon)
+  cardArmonId: string;
+
+  @belongsTo(() => Card)
+  cardId: string;
+
+  @belongsTo(() => Class)
+  classId: string;
 
   constructor(data?: Partial<Mazo>) {
     super(data);
